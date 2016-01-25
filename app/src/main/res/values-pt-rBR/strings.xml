@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Scenario</string>
+
+    <string name="navigation_drawer_open">Abrir Drawer Navigation</string>
+    <string name="navigation_drawer_close">Fechar Drawer Navigation</string>
+
+    <string name="action_settings">Configurações</string>
+
+    <string name="Projects">Projetos</string>
+    <string name="hint_project_name">Nome do Projeto</string>
+    <string name="btn_save">Salvar</string>
+    <string name="msg_mandatory">Campo obrigatório.</string>
+    <string name="Ambient">Ambiente</string>
+    <string name="label_project_state">Projeto</string>
+    <string name="loading">Carregando imagem ....</string>
+    <string name="error_image">Imagem não existe ou erro de rede.</string>
+    <string name="Module">Modulo</string>
+    <string name="LightFixture">Luminária</string>
+    <string name="nav_exit">Sair</string>
+    <string name="label_module_state">Modulo</string>
+    <string name="title_activity_module_ambient">ModuleAmbientActivity</string>
+    <string name="hint_module_name">Nome do Modulo</string>
+    <string name="label_ambient_state">Ambiente</string>
+    <string name="ambient_name">Nome do Ambiente</string>
+    <string name="name_light">Nome da Luminária</string>
+</resources>

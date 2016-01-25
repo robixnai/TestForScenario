@@ -1,0 +1,10 @@
+@startuml
+
+class Ambient {
+    Integer mId;
+    Project mProject;
+    String mName;
+    List<Ambient> mAmbients;
+}
+
+@enduml

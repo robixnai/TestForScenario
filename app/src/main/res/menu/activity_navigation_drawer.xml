@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_projects"
+            android:title="@string/Projects" />
+        <item
+            android:id="@+id/nav_ambient"
+            android:title="@string/Ambient" />
+        <item
+            android:id="@+id/nav_module"
+            android:title="@string/Module" />
+        <item
+            android:id="@+id/nav_light_fixture"
+            android:title="@string/LightFixture" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_exit"
+                    android:title="@string/nav_exit" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

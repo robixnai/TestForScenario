@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.scenario.robson.testforscenario.views.activity.AmbientEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="100"
+                android:hint="@string/ambient_name" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spinerProject"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom_ambient"
+            android:focusable="true"
+            app:ms_alignLabels="false"
+            app:ms_arrowColor="#9E9E9E"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelColor="@color/colorAccent"
+            app:ms_floatingLabelText="@string/label_project_state"
+            app:ms_hint="@string/label_project_state"
+            app:ms_multiline="false"/>
+
+        <LinearLayout
+            android:id="@+id/ambientsd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <Button android:id="@+id/BtnSave"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_save"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+</ScrollView>

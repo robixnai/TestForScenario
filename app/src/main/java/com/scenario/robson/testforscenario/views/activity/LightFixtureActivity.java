@@ -57,20 +57,16 @@ public class LightFixtureActivity extends AppCompatActivity {
             mLightFixture.setModule(new Module());
             mLightFixture.save();
 
-            if (RESULT_OK == -1) {
-                super.setResult(RESULT_OK);
+            super.setResult(RESULT_OK);
 
-                final LightFixture lightFixture = mLightFixture.getLightFixture(mLightFixture);
-                final String lightFixtureName = lightFixture.getName();
-                final Intent intent = new Intent(LightFixtureActivity.this, LigtFixtureModuleActivity.class);
-                final Bundle extras = new Bundle();
+            final LightFixture lightFixture = mLightFixture.getLightFixture(mLightFixture);
+            final String lightFixtureName = lightFixture.getName();
+            final Intent intent = new Intent(LightFixtureActivity.this, LigtFixtureModuleActivity.class);
+            final Bundle extras = new Bundle();
 
-                extras.putString(LIGHT_FICTURE_ID, lightFixtureName);
-                intent.putExtras(extras);
-                startActivity(intent);
-            }
-
-            AppHelper.returnHome(LightFixtureActivity.this);
+            extras.putString(LIGHT_FICTURE_ID, lightFixtureName);
+            intent.putExtras(extras);
+            startActivity(intent);
         }
     }
 

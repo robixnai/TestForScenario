@@ -72,20 +72,16 @@ public class ModuleActivity extends AppCompatActivity {
             mModule.setAmbient(new Ambient());
             mModule.save();
 
-            if (RESULT_OK == -1) {
-                super.setResult(RESULT_OK);
+            super.setResult(RESULT_OK);
 
-                final Module module = mModule.getModule(mModule);
-                final String moduleName = module.getName();
-                final Intent intent = new Intent(ModuleActivity.this, ModuleAmbientActivity.class);
-                final Bundle extras = new Bundle();
+            final Module module = mModule.getModule(mModule);
+            final String moduleName = module.getName();
+            final Intent intent = new Intent(ModuleActivity.this, ModuleAmbientActivity.class);
+            final Bundle extras = new Bundle();
 
-                extras.putString(MODULE_ID, moduleName);
-                intent.putExtras(extras);
-                startActivity(intent);
-            }
-
-            AppHelper.returnHome(ModuleActivity.this);
+            extras.putString(MODULE_ID, moduleName);
+            intent.putExtras(extras);
+            startActivity(intent);
         }
     }
 
@@ -96,6 +92,7 @@ public class ModuleActivity extends AppCompatActivity {
             @Override
             public void onPostExecute(Bitmap image) {
                 if(image != null){
+                    mImage.setVisibility(View.VISIBLE);
                     mImage.setImageBitmap(image);
                 }else{
                     Toast.makeText(ModuleActivity.this, R.string.error_image, Toast.LENGTH_SHORT).show();

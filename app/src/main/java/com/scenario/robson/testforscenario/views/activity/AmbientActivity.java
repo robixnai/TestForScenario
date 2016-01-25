@@ -179,6 +179,7 @@ public class AmbientActivity extends AppCompatActivity {
             @Override
             public void onPostExecute(Bitmap image) {
                 if(image != null){
+                    mImage.setVisibility(View.VISIBLE);
                     mImage.setImageBitmap(image);
                 }else{
                     Toast.makeText(AmbientActivity.this, R.string.error_image, Toast.LENGTH_SHORT).show();

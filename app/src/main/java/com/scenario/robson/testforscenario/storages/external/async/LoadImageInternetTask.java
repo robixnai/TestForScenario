@@ -37,13 +37,16 @@ public class LoadImageInternetTask extends AsyncTask<String, String, Bitmap> {
             mProgressDialog = new ProgressDialog(mContext);
             mProgressDialog.setMessage(mContext.getString(R.string.loading));
             mProgressDialog.show();
+            mProgressDialog.setCancelable(false);
         }
     }
 
     @Override
     protected Bitmap doInBackground(String... params) {
         try {
-            mBitmap = BitmapFactory.decodeStream((InputStream) new URL(params[0]).getContent());
+            BitmapFactory.Options opts = new BitmapFactory.Options();
+            opts.inSampleSize = 4;
+            mBitmap = BitmapFactory.decodeStream((InputStream) new URL(params[0]).getContent(), null, opts);
         } catch (Exception e) {
             e.printStackTrace();
         }

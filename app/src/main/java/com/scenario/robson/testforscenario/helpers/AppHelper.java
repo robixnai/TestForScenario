@@ -19,12 +19,15 @@ import com.scenario.robson.testforscenario.utils.AppUtil;
 import com.scenario.robson.testforscenario.views.activity.NavigationDrawerActivity;
 import com.scenario.robson.testforscenario.views.activity.ProjectActivity;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Created by robson on 23/01/16.
@@ -52,36 +55,16 @@ public final class AppHelper {
     }
 
     public static Bitmap selectFile(Intent data, Context context) {
-
-        Uri selectedImage = data.getData();
-        String[] filePathColumn = { MediaStore.Images.Media.DATA };
-        Cursor cursor = context.getContentResolver().query(selectedImage,filePathColumn, null, null, null);
-        cursor.moveToFirst();
-        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-        String picturePath = cursor.getString(columnIndex);
-        cursor.close();
-
-        final Bitmap bitmap = BitmapFactory.decodeFile(picturePath);
-        return bitmap;
-
-
-        /*Uri selectedImageUri = data.getData();
+        Uri selectedImageUri = data.getData();
         String[] projection = {MediaStore.Images.Media.DATA};
-
-        Cursor cursor = context.getContentResolver().query(selectedImageUri, projection, null, null, null);
-        cursor.moveToFirst();
-        int columnIndex = cursor.getColumnIndex(projection[0]);
-        String picturePath = cursor.getString(columnIndex);
-        cursor.close();
-
-        final Bitmap bitmap = BitmapFactory.decodeFile(picturePath);
-        return bitmap;*//*
 
         CursorLoader cursorLoader = new CursorLoader(context, selectedImageUri, projection, null, null, null);
         Cursor cursor = cursorLoader.loadInBackground();
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
         cursor.moveToFirst();
+
         String selectedImagePath = cursor.getString(column_index);
+
         Bitmap bitmap;
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
@@ -95,7 +78,7 @@ public final class AppHelper {
         options.inJustDecodeBounds = false;
         bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
 
-        return bitmap;*/
+        return bitmap;
     }
 
     public static byte[] getBitmapAsByteArray(Bitmap bitmap) {
